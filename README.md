@@ -2,8 +2,8 @@
 
 ## User Story 1
 > As a soft-life user
-> so I can access websites quickly
-> I can view a list of bookmarked websites
+> - so I can access websites quickly
+> - I can view a list of bookmarked websites
 
 ## User Story 2
 > As a user I can Add new bookmarks
