@@ -5,10 +5,10 @@
 > - So I can access websites quickly
 > - I can view a list of bookmarked websites
 
-## User Story 2
-> As a user I can Add new bookmarks
-> So that I can save new websites
-> I can add bookmarks to the list
+## User Story #2
+> -As a user I can Add new bookmarks
+> -So that I can save new websites
+> -I can add bookmarks to the list
 - As a user I can Delete bookmarks
 - As a user I can Update bookmarks
 - As a user I can Comment on bookmarks
