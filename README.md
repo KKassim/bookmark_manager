@@ -1,6 +1,6 @@
 # Bookmark Manager
 
-## User Story 1
+## User Story #1
 > - As a soft-life user
 > - So I can access websites quickly
 > - I can view a list of bookmarked websites
