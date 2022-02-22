@@ -1,5 +1,9 @@
 # Bookmark Manager
 
+Using Capybara with RSpec and Sinatra. I am launching a Rubyb web project. 
+ - Using TDD I will first test the index page for my bookmark manager.
+  - 
+
 ## User Story #1
 > - As a soft-life user
 > - So I can access websites quickly
