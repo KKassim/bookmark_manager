@@ -9,6 +9,9 @@ Using Capybara with RSpec and Sinatra. I am launching a Rubyb web project.
 > - So I can access websites quickly
 > - I can view a list of bookmarked websites
 
+In order to create the ability to add bookmarks onto the web page we must first create a database and table for information to be stored.
+Using SQL and database manager Postgres we will store, read, update and delete data from tables. To fullfill the following user story:
+
 ## User Story #2
 > - As a time-pressed user
 > - So that I can save a website
