@@ -21,6 +21,17 @@ Using SQL and database manager Postgres we will use `INSERT`, `UPDATE` and `DELE
 > - So that I can save a website
 > - I would like to add the site's address and title to bookmark manager
 
+To set up a test database, let's run `psql` and create a database, and use the SQL query saved in `db/migrations/01_create_bookmarks_table.sql` to create a bookmarks table.
+
+```
+$> psql
+admin=# CREATE DATABASE "bookmark_manager_test";
+admin=# CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
+```
+
+Now, if we list databases (in `psql` or by looking in TablePlus), we'll see two databases for our application: `bookmark_manager`, and the new `bookmark_manager_test` database.
+
+
 - [x] Use the databases in the correct contexts, so that:
   - [x] When running tests using `rspec`, bookmarks are read from the new `bookmark_manager_test` database.
   - [x] When running the application locally, bookmarks are read from the `bookmark_manager` database.
