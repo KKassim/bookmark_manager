@@ -17,6 +17,8 @@ Using SQL and database manager Postgres we will use `INSERT`, `UPDATE` and `DELE
 > - So that I can save a website
 > - I would like to add the site's address and title to bookmark manager
 
+- When updating files this will mess with the test formulated in rspec therefore to overcome this. I have set up a test database that will reset upon each test.
+
 ## User Story #3
 > - As a user
 > - So I can remove bookmarks I no longer need
