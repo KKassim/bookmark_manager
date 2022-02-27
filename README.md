@@ -22,7 +22,7 @@ Using SQL and database manager Postgres we will use `INSERT`, `UPDATE` and `DELE
 > - I would like to add the site's address and title to bookmark manager
 
 - When updating files this will mess with the test formulated in rspec therefore to overcome this. I have set up a test database that will reset upon each test.
-- [ ] Use the databases in the correct contexts, so that:
+- [x] Use the databases in the correct contexts, so that:
   - [ ] When running tests using `rspec`, bookmarks are read from the new `bookmark_manager_test` database.
   - [ ] When running the application locally, bookmarks are read from the `bookmark_manager` database.
 - [ ] Write a helper method that **truncates** (empties) the `bookmarks` table in the test database before each test run.
