@@ -23,13 +23,13 @@ Using SQL and database manager Postgres we will use `INSERT`, `UPDATE` and `DELE
 
 - When updating files this will mess with the test formulated in rspec therefore to overcome this. I have set up a test database that will reset upon each test.
 - [x] Use the databases in the correct contexts, so that:
-  - [ ] When running tests using `rspec`, bookmarks are read from the new `bookmark_manager_test` database.
-  - [ ] When running the application locally, bookmarks are read from the `bookmark_manager` database.
-- [ ] Write a helper method that **truncates** (empties) the `bookmarks` table in the test database before each test run.
-- [ ] Run this helper method automatically right before **each** RSpec spec, so every test starts with a 'clean' test database.
-- [ ] Add required test bookmarks to the `bookmark_manager_test` database in the feature and `Bookmark` tests.
-- [ ] Make sure feature and unit tests are passing.
-- [ ] Update database setup instructions to include the test database.
+  - [x] When running tests using `rspec`, bookmarks are read from the new `bookmark_manager_test` database.
+  - [x] When running the application locally, bookmarks are read from the `bookmark_manager` database.
+- [x] Write a helper method that **truncates** (empties) the `bookmarks` table in the test database before each test run.
+- [x] Run this helper method automatically right before **each** RSpec spec, so every test starts with a 'clean' test database.
+- [x] Add required test bookmarks to the `bookmark_manager_test` database in the feature and `Bookmark` tests.
+- [x] Make sure feature and unit tests are passing.
+- [x] Update database setup instructions to include the test database.
 
 
 ## User Story #3
