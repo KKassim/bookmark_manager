@@ -6,15 +6,25 @@ describe Bookmark do
       connection = PG.connect(dbname: 'bookmark_manager_test')
 
         # Adding test data
-      connection.exec("INSERT INTO bookmarks (url) VALUES ('www.youtube.com');")
-      connection.exec("INSERT INTO bookmarks (url) VALUES ('www.twitter.com');")
-      connection.exec("INSERT INTO bookmarks (url) VALUES ('www.google.com');")
+      bookmark = Bookmark.create(url: "http://www.makersacademy.com", title: "Makers Academy")
 
       bookmarks = Bookmark.all
+     
+      expect(bookmarks.length).to eq 1
+      expect(bookmarks.first).to be_a Bookmark
+      expect(bookmarks.first.id).to eq bookmark.values[0][0]
+      expect(bookmarks.first.title).to eq 'Makers Academy'
+      expect(bookmarks.first.url).to eq 'http://www.makersacademy.com'
+ 
+    end
+  end
 
-      expect(bookmarks).to include("www.youtube.com")
-      expect(bookmarks).to include("www.twitter.com")
-      expect(bookmarks).to include("www.google.com")
+  describe '.create' do
+    it 'creates a new bookmark' do
+      bookmark = Bookmark.create(url: 'http://www.example.org', title: 'example').first
+
+      expect(bookmark['url']).to eq 'http://www.example.org'
+      expect(bookmark['title']).to eq 'example'
     end
   end
 end

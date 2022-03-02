@@ -1,7 +1,7 @@
 require_relative './setup_test_database'
+
 # Set the environment to "test"
 ENV['RACK_ENV'] = 'test'
-
 RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
