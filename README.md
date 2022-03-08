@@ -1,6 +1,15 @@
 # Bookmark Manager
 Rails is a full-stack framework. It is a server-side web application with all the tools needed to build web apps. 
 Using Capybara with RSpec and Sinatra. I am launching a Rubyb web project. 
+For this project as always my flow will be:
+As always, our flow is:
+
+- Requirement
+- User Story
+- Feature Test
+- Unit Tests
+- Implementation
+- Refactoring
 
 ## User Story #1
 
