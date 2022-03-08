@@ -27,8 +27,8 @@ class BookmarkManager < Sinatra::Base
   end
 
   delete '/bookmarks/:id' do
-  Bookmark.delete(id: params[:id])
-  redirect '/bookmarks'
+    Bookmark.delete(id: params[:id])
+    redirect '/bookmarks'
   end
 
   get '/bookmarks/:id/edit' do
@@ -40,7 +40,7 @@ class BookmarkManager < Sinatra::Base
     connection = PG.connect(dbname: 'bookmark_manager_test')
     connection.exec_params(
       "UPDATE bookmarks SET url = $1, title = $2 WHERE id = $3",
-      [ params[:url], params[:title], params[:id] ]
+      [params[:url], params[:title], params[:id]]
     )
 
     redirect('/bookmarks')
