@@ -58,11 +58,10 @@ Now, if we list databases (in `psql` or by looking in TablePlus), we'll see two 
 
 ## User Story #4
 
-```
 > - As a user
 > - So I can change a bookmark in Bookmark Manager
 > - I want to update a bookmark
-```
+
 
 Here's the user flow for updating a bookmark:
 
