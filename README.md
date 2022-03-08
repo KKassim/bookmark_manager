@@ -56,8 +56,21 @@ Now, if we list databases (in `psql` or by looking in TablePlus), we'll see two 
 > - So I can remove bookmarks I no longer need
 > - I can delete bookmarks
 
+## User Story #4
 
-> - As a user I can Update bookmarks
+```
+> - As a user
+> - So I can change a bookmark in Bookmark Manager
+> - I want to update a bookmark
+```
+
+Here's the user flow for updating a bookmark:
+
+1. Visit the 'update bookmark' form for a particular bookmark.
+2. Fill in the form with new data – say, a new title – and submit it.
+3. See the homepage, with the updated bookmark title (and the old one is gone).
+
+
 > - As a user I can Comment on bookmarks
 - As a user I can Tag bookmarks into categories
 - As a user I can Filter bookmarks by tag
