@@ -69,6 +69,7 @@ Here's the user flow for updating a bookmark:
 2. Fill in the form with new data – say, a new title – and submit it.
 3. See the homepage, with the updated bookmark title (and the old one is gone).
 
+At this stage I have now built a Sinatra application that can read and write from and to a database. It's structured in an MVC style, and has test and development environments.
 
 > - As a user I can Comment on bookmarks
 - As a user I can Tag bookmarks into categories
