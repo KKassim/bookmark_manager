@@ -4,7 +4,7 @@ require 'database_helpers'
 describe Bookmark do
   describe '.all' do
     it 'returns all bookmarks' do
-      connection = PG.connect(dbname: 'bookmark_manager_test')
+      @connection = PG.connect(dbname: 'bookmark_manager_test')
 
       bookmark = Bookmark.create(url: "http://www.makersacademy.com", title: "Makers Academy")
       bookmarks = Bookmark.all
