@@ -52,6 +52,7 @@ Now, if we list databases (in `psql` or by looking in TablePlus), we'll see two 
 
 
 ## User Story #3
+
 > - As a user
 > - So I can remove bookmarks I no longer need
 > - I can delete bookmarks
@@ -71,7 +72,42 @@ Here's the user flow for updating a bookmark:
 
 At this stage I have now built a Sinatra application that can read and write from and to a database. It's structured in an MVC style, and has test and development environments.
 
-> - As a user I can Comment on bookmarks
+## User Story #4
+
+> - As a user with an opinion on everything
+> - So that I can express my views
+> - I want to be able to comment on bookmarks
+
+In a one-to-many relationship, there are two models:
+
+- one 'parent' model, `Bookmark`, _has many_ `Comment`s.
+- the 'child' model, `Comment`, _belongs to_ a single `Bookmark`.
+
+```
+  ONE       ––≡≡   MANY
+ Bookmark   ––≡≡  Comments
+```
+
+The only way to store this in a table relationship is to add an extra column to the 'child' model.
+
+For instance, in the table below, the first two comments refer to a Bookmark with an ID of 1. The last comment refers to a Bookmark with an ID of 2:
+
+```
+| id | text                       | bookmark_id |
+|----|----------------------------|-------------|
+| 1  | Great Bookmark!            | 1           |
+| 2  | I don't like this Bookmark | 1           |
+| 3  | What a cool resource       | 2           |
+```
+
+Comments with ID 1 and 2 are comments on the same Bookmark. If they were displayed, they'd look like this:
+
+- Bookmark 1
+  - Great Bookmark!
+  - I don't like this Bookmark.
+- Bookmark 2
+  - What a cool resource
+
 - As a user I can Tag bookmarks into categories
 - As a user I can Filter bookmarks by tag
 - As a user I can restrict user to manage only their own bookmarks
