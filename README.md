@@ -72,7 +72,7 @@ Here's the user flow for updating a bookmark:
 
 At this stage I have now built a Sinatra application that can read and write from and to a database. It's structured in an MVC style, and has test and development environments.
 
-## User Story #4
+## User Story #5
 
 > - As a user with an opinion on everything
 > - So that I can express my views
