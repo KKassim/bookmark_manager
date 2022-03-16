@@ -107,7 +107,12 @@ Comments with ID 1 and 2 are comments on the same Bookmark. If they were display
   - I don't like this Bookmark.
 - Bookmark 2
   - What a cool resource
+  
+## User Story #5
+> - As a user organised user
+> - So that I filter through my bookmarks
+> - I want to be able to search through my bookmarks tags
 
-- As a user I can Tag bookmarks into categories
+
 - As a user I can Filter bookmarks by tag
 - As a user I can restrict user to manage only their own bookmarks
