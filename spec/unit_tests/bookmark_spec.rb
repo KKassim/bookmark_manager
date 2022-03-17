@@ -8,11 +8,10 @@ describe Bookmark do
 
       bookmark = Bookmark.create(url: "http://www.makersacademy.com", title: "Makers Academy")
       bookmarks = Bookmark.all
-      persisted_data = persisted_data(id: bookmark.id)
      
       expect(bookmarks.length).to eq 1
       expect(bookmarks.first).to be_a Bookmark
-      expect(bookmark.id).to eq persisted_data['id']
+      expect(bookmarks.first.id).to eq bookmark.id
       expect(bookmarks.first.title).to eq 'Makers Academy'
       expect(bookmarks.first.url).to eq 'http://www.makersacademy.com'
  
@@ -20,6 +19,15 @@ describe Bookmark do
   end
 
   describe '.create' do
+    it 'creates a new bookmark' do
+      bookmark = Bookmark.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
+      persisted_data = persisted_data(table: 'bookmarks', id: bookmark.id)
+
+      expect(bookmark).to be_a Bookmark
+      expect(bookmark.id).to eq persisted_data['id']
+      expect(bookmark.title).to eq 'Makers Academy'
+      expect(bookmark.url).to eq 'http://www.makersacademy.com'
+    end
     it 'does not create a new bookmark if the URL is not valid' do
       Bookmark.create(url: 'not a real bookmark', title: 'not a real bookmark')
       expect(Bookmark.all).to be_empty
@@ -47,6 +55,7 @@ describe Bookmark do
       expect(updated_bookmark.url).to eq 'http://www.snakersacademy.com'
     end
   end
+
   describe '.find' do
     it 'returns the requested bookmark object' do
       bookmark = Bookmark.create(title: 'Makers Academy', url: 'http://www.makersacademy.com')
@@ -57,6 +66,27 @@ describe Bookmark do
       expect(result.id).to eq bookmark.id
       expect(result.title).to eq 'Makers Academy'
       expect(result.url).to eq 'http://www.makersacademy.com'
+    end
+  end
+  let(:comment_class) { double(:comment_class) }
+
+  describe '#comments' do
+    it 'calls .where on the Comment class' do
+      bookmark = Bookmark.create(title: 'Makers Academy', url: 'http://www.makersacademy.com')
+      expect(comment_class).to receive(:where).with(bookmark_id: bookmark.id)
+  
+      bookmark.comments(comment_class)
+    end
+
+    it 'returns a list of comments on the bookmark' do
+      bookmark = Bookmark.create(title: 'Makers Academy', url: 'http://www.makersacademy.com')
+      DatabaseConnection.query(
+        "INSERT INTO comments (id, text, bookmark_id) VALUES(1, 'Test comment', $1)",
+        [bookmark.id]
+      )
+      comment = bookmark.comments.first
+  
+      expect(comment.text).to eq 'Test comment'
     end
   end
 end

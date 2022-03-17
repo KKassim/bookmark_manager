@@ -13,5 +13,5 @@ feature 'Viewing bookmarks' do
     expect(page).to have_link('twitter', href: 'http://www.twitter.com')
     expect(page).to have_link('youtube', href: 'http://www.youtube.com')
     expect(page).to have_link('google', href: 'http://www.google.com')  
-end
+  end
 end
