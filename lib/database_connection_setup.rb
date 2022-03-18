@@ -1,4 +1,4 @@
-require 'database_connection.rb'
+require 'database_connection'
 if ENV['RACK_ENV'] == 'test'
   DatabaseConnection.setup('bookmark_manager_test')
 else
