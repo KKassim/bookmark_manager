@@ -12,8 +12,8 @@ attr_reader :id, :bookmark_id, :tag_id
         [bookmark_id, tag_id]
     )
         BookmarkTag.new(
-          id: entries[0]['id']
-          bookmark_id: entries[0]['bookmark_id']
+          id: entries[0]['id'],
+          bookmark_id: entries[0]['bookmark_id'],
           tag_id: entries[0]['tag_id']
         )
     end

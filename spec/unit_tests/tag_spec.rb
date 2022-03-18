@@ -1,6 +1,6 @@
-require 'tag'
- require 'bookmark'
- require 'database_helpers'
+require 'tags'
+require 'bookmark'
+require 'database_helpers'
 
  describe Tag do
    describe '.create' do
@@ -32,4 +32,4 @@ require 'tag'
        expect(tag.content).to eq tag1.content
      end
    end
- end
+end

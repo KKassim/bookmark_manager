@@ -1,4 +1,4 @@
-require 'bookmark_tag'
+require 'bookmarktags'
 
  describe BookmarkTag do
    describe '.create' do

@@ -12,7 +12,7 @@ attr_reader :id, :content
         [content]
     )
         Tag.new(
-          id: entries[0]['id']
+          id: entries[0]['id'],
           content: entries[0]['content']
         )
     end
