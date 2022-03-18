@@ -47,4 +47,25 @@ describe Tag do
       expect(tag.content).to eq tag1.content
     end
   end
+
+  describe '.find' do
+    it 'returns a tag with the given id' do
+      tag = Tag.create(content: 'test tag')
+
+      result = Tag.find(id: tag.id)
+
+      expect(result.id).to eq tag.id
+      expect(result.content).to eq tag.content
+    end
+  end
+
+  describe '#bookmarks' do
+    it 'calls .where on the bookmark class' do
+      tag = Tag.create(content: 'test tag')
+
+      expect(bookmark_class).to receive(:where).with(tag_id: tag.id)
+
+      tag.bookmarks(bookmark_class)
+    end
+  end
 end
