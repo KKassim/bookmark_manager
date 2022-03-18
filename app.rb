@@ -66,7 +66,8 @@ title: params[:title])
   end
 
   get '/tags/:id/bookmarks' do
-   
+    @tag = Tag.find(id: params['id'])
+    erb :'tags/index'
   end
 
   post '/tags/:id/bookmarks' do

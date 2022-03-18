@@ -10,7 +10,7 @@ require 'database_helpers'
        persisted_data = persisted_data(id: tag.id, table: 'tags')
 
        expect(tag).to be_a Tag
-       expect(tag.id).to eq persisted_data.first['id']
+       expect(tag.id).to eq persisted_data['id']
        expect(tag.content).to eq 'test tag'
      end
    end

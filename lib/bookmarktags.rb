@@ -7,8 +7,8 @@ attr_reader :id, :bookmark_id, :tag_id
         @tag_id = tag_id
     end
 
-    def self.create
-        entries = DatabaseConnection.query("INSERT INTO tags (bookmark_id, tag_id) VALUES ($1, $2) RETURNING id, bookmark_id, tag_id;",
+    def self.create(bookmark_id:, tag_id:)
+        entries = DatabaseConnection.query("INSERT INTO bookmark_tags (bookmark_id, tag_id) VALUES ($1, $2) RETURNING id, bookmark_id, tag_id;",
         [bookmark_id, tag_id]
     )
         BookmarkTag.new(
