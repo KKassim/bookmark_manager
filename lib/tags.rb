@@ -1,3 +1,5 @@
+require_relative './database_connection'
+
 class Tag
 
   attr_reader :id, :content
@@ -11,14 +13,15 @@ class Tag
     entries = DatabaseConnection.query(      
       "SELECT * FROM tags WHERE content = $1;", [content]
     ).first
-    entries ||= DatabaseConnection.query(
-          "INSERT INTO tags (content) VALUES($1) RETURNING id, content;", 
-          [content]
+    if !entries
+        entries = DatabaseConnection.query(
+          "INSERT INTO tags (content) VALUES($1) RETURNING id, content;", [content]
         ).first
-    Tag.new(
-        id: entries['id'], 
-        content: entries['content']
-    )
+      end
+      Tag.new(
+          id: entries['id'], 
+          content: entries['content']
+        )
   end
 
   def self.where(bookmark_id:)

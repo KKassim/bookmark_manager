@@ -5,6 +5,8 @@ require './lib/database_connection_setup'
 require 'uri'
 require 'sinatra/flash'
 require './lib/comment'
+require_relative './lib/tags'
+require_relative './lib/bookmarktags'
 
 class BookmarkManager < Sinatra::Base
   enable :sessions, :method_override
@@ -36,7 +38,7 @@ title: params[:title])
 
   get '/bookmarks/:id/edit' do
     @bookmark = Bookmark.find(id: params[:id])
-    erb :"bookmarks/edit"
+    erb :'bookmarks/edit'
   end
 
   delete '/bookmarks/:id' do
@@ -56,7 +58,7 @@ title: params[:title])
 
   get '/bookmarks/:id/tags/new' do
     @bookmark_id = params[:id]
-    erb :'/tags/new'
+    erb :'bookmarks/tags/new'
   end
 
   post '/bookmarks/:id/tags' do
@@ -67,7 +69,7 @@ title: params[:title])
 
   get '/tags/:id/bookmarks' do
     @tag = Tag.find(id: params['id'])
-    erb :'tags/index'
+    erb :'bookmarks/tags/index'
   end
 
   post '/tags/:id/bookmarks' do
